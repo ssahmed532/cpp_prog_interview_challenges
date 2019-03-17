@@ -24,4 +24,10 @@ class TreeNode
         {
             return (pLeft == nullptr) && (pRight == nullptr);
         }
+
+        void debugPrint();
+
+        // insert a new key into a given BST
+        static void insertIntoBST(TreeNode* pRoot, int item);
+
 };

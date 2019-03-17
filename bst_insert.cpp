@@ -3,39 +3,6 @@
 #include <iostream>
 
 
-void insertIntoBST(TreeNode* pRoot, int item)
-{
-    assert(pRoot != nullptr);
-
-    if (item < pRoot->value)
-    {
-        if (pRoot->pLeft == nullptr)
-        {
-            TreeNode* leftChild = new TreeNode(item);
-            pRoot->pLeft = leftChild;
-        }
-        else
-        {
-            // recurse into left child node
-            insertIntoBST(pRoot->pLeft, item);
-        }
-    }
-    else if (item > pRoot->value)
-    {
-        if (pRoot->pRight == nullptr)
-        {
-            TreeNode* rightChild = new TreeNode(item);
-            pRoot->pRight = rightChild;
-        }
-        else
-        {
-            // recurse into right child node
-            insertIntoBST(pRoot->pRight, item);
-        }
-    }
-}
-
-
 void printBinaryTree(TreeNode* pRoot)
 {
     if (pRoot != nullptr)
@@ -72,12 +39,20 @@ int main(void)
 
     root = new TreeNode(15);
 
-    insertIntoBST(root, 10);
-    insertIntoBST(root, 20);
-    insertIntoBST(root, 8);
-    insertIntoBST(root, 16);
-    insertIntoBST(root, 25);
-    insertIntoBST(root, 12);
+    TreeNode::insertIntoBST(root, 15);
+    TreeNode::insertIntoBST(root, 15);
+    TreeNode::insertIntoBST(root, 15);
+    TreeNode::insertIntoBST(root, 10);
+    TreeNode::insertIntoBST(root, 10);
+    TreeNode::insertIntoBST(root, 20);
+    TreeNode::insertIntoBST(root, 8);
+    TreeNode::insertIntoBST(root, 16);
+    TreeNode::insertIntoBST(root, 25);
+    TreeNode::insertIntoBST(root, 12);
+    TreeNode::insertIntoBST(root, 12);
+    TreeNode::insertIntoBST(root, 8);
+    TreeNode::insertIntoBST(root, 16);
+    TreeNode::insertIntoBST(root, 25);
 
     //printBinaryTree(root);
     inorderPrintTree(root);

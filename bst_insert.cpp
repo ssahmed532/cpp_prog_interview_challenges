@@ -39,20 +39,34 @@ int main(void)
 
     root = new TreeNode(15);
 
-    TreeNode::insertIntoBST(root, 15);
-    TreeNode::insertIntoBST(root, 15);
-    TreeNode::insertIntoBST(root, 15);
-    TreeNode::insertIntoBST(root, 10);
-    TreeNode::insertIntoBST(root, 10);
-    TreeNode::insertIntoBST(root, 20);
-    TreeNode::insertIntoBST(root, 8);
-    TreeNode::insertIntoBST(root, 16);
-    TreeNode::insertIntoBST(root, 25);
-    TreeNode::insertIntoBST(root, 12);
-    TreeNode::insertIntoBST(root, 12);
-    TreeNode::insertIntoBST(root, 8);
-    TreeNode::insertIntoBST(root, 16);
-    TreeNode::insertIntoBST(root, 25);
+    bool inserted = false;
+
+    inserted = TreeNode::insertIntoBST(root, 15);
+    assert(!inserted);
+    inserted = TreeNode::insertIntoBST(root, 15);
+    assert(!inserted);
+    inserted = TreeNode::insertIntoBST(root, 10);
+    assert(inserted);
+    inserted = TreeNode::insertIntoBST(root, 10);
+    assert(!inserted);
+    inserted = TreeNode::insertIntoBST(root, 20);
+    assert(inserted);
+    inserted = TreeNode::insertIntoBST(root, 8);
+    assert(inserted);
+    inserted = TreeNode::insertIntoBST(root, 16);
+    assert(inserted);
+    inserted = TreeNode::insertIntoBST(root, 25);
+    assert(inserted);
+    inserted = TreeNode::insertIntoBST(root, 12);
+    assert(inserted);
+    inserted = TreeNode::insertIntoBST(root, 12);
+    assert(!inserted);
+    inserted = TreeNode::insertIntoBST(root, 8);
+    assert(!inserted);
+    inserted = TreeNode::insertIntoBST(root, 16);
+    assert(!inserted);
+    inserted = TreeNode::insertIntoBST(root, 25);
+    assert(!inserted);
 
     //printBinaryTree(root);
     inorderPrintTree(root);

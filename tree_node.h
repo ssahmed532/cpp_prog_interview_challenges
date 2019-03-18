@@ -28,6 +28,5 @@ class TreeNode
         void debugPrint();
 
         // insert a new key into a given BST
-        static void insertIntoBST(TreeNode* pRoot, int item);
-
+        static bool insertIntoBST(TreeNode* pRoot, int item);
 };

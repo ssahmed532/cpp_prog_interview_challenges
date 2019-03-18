@@ -18,7 +18,7 @@ void TreeNode::debugPrint()
 }
 
 
-void TreeNode::insertIntoBST(TreeNode* pRoot, int item)
+bool TreeNode::insertIntoBST(TreeNode* pRoot, int item)
 {
     assert(pRoot != nullptr);
 
@@ -28,11 +28,13 @@ void TreeNode::insertIntoBST(TreeNode* pRoot, int item)
         {
             TreeNode* leftChild = new TreeNode(item);
             pRoot->pLeft = leftChild;
+
+            return true;
         }
         else
         {
             // recurse into left child node
-            insertIntoBST(pRoot->pLeft, item);
+            return insertIntoBST(pRoot->pLeft, item);
         }
     }
     else if (item > pRoot->value)
@@ -41,15 +43,18 @@ void TreeNode::insertIntoBST(TreeNode* pRoot, int item)
         {
             TreeNode* rightChild = new TreeNode(item);
             pRoot->pRight = rightChild;
+
+            return true;
         }
         else
         {
             // recurse into right child node
-            insertIntoBST(pRoot->pRight, item);
+            return insertIntoBST(pRoot->pRight, item);
         }
     }
     else
     {
         std::cerr << "Item with value " << item << " already exists in the Tree" << '\n';
+        return false;
     }
 }

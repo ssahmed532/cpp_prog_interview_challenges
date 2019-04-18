@@ -58,3 +58,18 @@ bool TreeNode::insertIntoBST(TreeNode* pRoot, int item)
         return false;
     }
 }
+
+
+bool TreeNode::searchKeyInBST(TreeNode* pRoot, int key)
+{
+    if (nullptr == pRoot)
+        return false;
+
+    if (pRoot->value == key)
+        return true;
+
+    if (key < pRoot->value)
+        return searchKeyInBST(pRoot->pLeft, key);
+    else
+        return searchKeyInBST(pRoot->pRight, key);
+}

@@ -48,7 +48,7 @@ std::pair<char, int> getLongestRepeatingChar2(const std::string &input)
 
     std::pair<char, int> result = std::make_pair('\0', 0);
 
-    for (int i = 1; i < input.size(); i++)
+    for (size_t i = 1; i < input.size(); i++)
     {
         currCh = input[i];
         if (currCh == prevCh)
@@ -93,7 +93,7 @@ std::pair<char, int> getLongestRepeatingChar(const std::string &input)
     longestSeq.first = '\0';
     longestSeq.second = 0;
 
-    for (int i = 1; i < input.size(); i++)
+    for (size_t i = 1; i < input.size(); i++)
     {
         char currCh = input[i];
         if (currCh == repeatingCh)

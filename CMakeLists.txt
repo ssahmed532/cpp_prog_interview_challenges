@@ -1,0 +1,18 @@
+project(cpp_prog_interview_challenges)
+
+# Flags Variables
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wall")
+
+# Executable Target(s)
+add_executable(char_frequencies char_frequencies.cpp)
+add_executable(distribute_candies distribute_candies.cpp)
+add_executable(fibonacci_recursive_memoization fibonacci_recursive_memoization.cpp)
+add_executable(fibonacci_recursive_naive fibonacci_recursive_naive.cpp)
+add_executable(flatten_vectors flatten_vectors.cpp)
+add_executable(hackerrank_candies hackerrank_candies.cpp)
+add_executable(hackerrank_hourglass_sum2 hackerrank_hourglass_sum2.cpp)
+add_executable(hackerrank_hourglass_sum hackerrank_hourglass_sum.cpp)
+add_executable(hackerrank_rotate_left hackerrank_rotate_left.cpp)
+add_executable(longest_repeating_chars_sequence longest_repeating_chars_sequence.cpp)
+add_executable(recurring_chars recurring_chars.cpp)

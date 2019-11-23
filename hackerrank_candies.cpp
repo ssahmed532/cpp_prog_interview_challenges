@@ -19,7 +19,7 @@ long candies(int n, std::vector<int> arr)
 {
     std::vector<int> distribution(arr.size(), 1);
 
-    for (int i = 1; i < arr.size(); i++)
+    for (size_t i = 1; i < arr.size(); i++)
     {
         const int prevChildDist = distribution[i-1];
         if (arr[i] > arr[i-1])

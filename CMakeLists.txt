@@ -18,3 +18,4 @@ add_executable(longest_repeating_chars_sequence longest_repeating_chars_sequence
 add_executable(recurring_chars recurring_chars.cpp)
 add_executable(fibonacci_sum_even_numbers fibonacci_sum_even_numbers.cpp)
 add_executable(prefix_sum prefix_sum.cpp)
+add_executable(distribute_N_candies_K_children distribute_N_candies_K_children.cpp)

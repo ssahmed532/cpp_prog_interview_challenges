@@ -6,6 +6,7 @@
 //
 
 #include <cassert>
+#include <cstring>
 #include <iostream>
 #include <vector>
 
@@ -94,8 +95,58 @@ bool Rectangle::isOverlap(const Rectangle &r1, const Rectangle &r2)
 }
 
 
-int main(void)
+void runUnitTests()
 {
+    std::cout << "Running Unit Tests ..." << '\n';
+
+    Rectangle r1(Point(2,2), 20, 15);
+
+    // test cases to validate that Points corresponding to the 4 Corners of r1
+    // are all "contained in" Rectangle r1
+    {
+        // bottom left-hand corner (origin/location of r1)
+        Point p1(2,2);
+        assert(r1.contains(p1) == true);
+
+        // top left-hand corner of r1
+        Point p2(2, 17);
+        assert(r1.contains(p2) == true);
+
+        // top right-hand corner of r1
+        Point p3(22, 17);
+        assert(r1.contains(p3) == true);
+
+        // bottom right-hand corner of r1
+        Point p4(22, 2);
+        assert(r1.contains(p4) == true);
+    }
+
+    // test cases to validate that Points lying along each of the 4 edges/sides
+    // of the Rectangle r1 are "contained in" it.
+    {
+        Point p1(2, 10);
+        assert(r1.contains(p1) == true);
+
+        Point p2(12, 17);
+        assert(r1.contains(p2) == true);
+
+        Point p3(22, 9);
+        assert(r1.contains(p3) == true);
+
+        Point p4(11, 2);
+        assert(r1.contains(p4) == true);
+    }
+}
+
+
+int main(int argc, char* argv[])
+{
+    if ((argc == 2) && (strcmp(argv[1], "--run-unit-tests") == 0))
+    {
+        runUnitTests();
+        return 0;
+    }
+
     {
         // these 2 rectangles overlap
         Rectangle r1(Point(1, 1), 5, 7);

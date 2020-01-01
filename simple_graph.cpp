@@ -1,9 +1,13 @@
 #include "simple_graph.h"
 #include <cassert>
+#include <algorithm>
 #include <iostream>
 #include <queue>
+#include <vector>
 
 using std::queue;
+using std::string;
+using std::vector;
 
 
 void SimpleGraph::addEdge(GraphNode *fromNode, GraphNode *toNode)
@@ -51,11 +55,21 @@ void SimpleGraph::debugPrint(GraphNode *fromNode)
 
     nodesToVisit.emplace(fromNode);
 
+    vector<string> nodesVisited;
+
     while (!nodesToVisit.empty())
     {
         auto node = nodesToVisit.front();
 
+        if (std::find(nodesVisited.begin(), nodesVisited.end(), node->id) != nodesVisited.end())
+        {
+            nodesToVisit.pop();
+            continue;
+        }
+
         std::cout << "Node id:" << node->id << ", value:" << node->value << ", neighbors count:" << node->neighbors.size() << '\n';
+
+        nodesVisited.emplace_back(node->id);
 
         for (const auto &n: node->neighbors)
         {

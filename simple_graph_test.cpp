@@ -25,7 +25,5 @@ int main(void)
     std::cout << "Size  of graph = " << myGraph.size()  << '\n';
     std::cout << '\n';
 
-    myGraph.debugPrint(&node1);
-
     return 0;
 }

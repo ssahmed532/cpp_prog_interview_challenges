@@ -22,3 +22,5 @@ add_executable(distribute_N_candies_K_children distribute_N_candies_K_children.c
 add_executable(reverse_words_in_string reverse_words_in_string.cpp)
 add_executable(overlapping_rectangles overlapping_rectangles.cpp)
 add_executable(simple_graph_test simple_graph.cpp simple_graph_test.cpp)
+add_executable(simple_graph_bfs_print simple_graph.cpp simple_graph_bfs_print.cpp)
+add_executable(simple_graph_dfs_print simple_graph.cpp simple_graph_dfs_print.cpp)

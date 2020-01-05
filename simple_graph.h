@@ -1,9 +1,8 @@
 #include "graph_node.h"
 #include <map>
 
-
 //
-// A Simple Graph:
+// A Simple *DIRECTED* Graph:
 //  - loops are not permitted
 //  - multiple edges are not permitted
 //  - edges are directed
@@ -20,6 +19,8 @@ public:
 
     void addEdge(GraphNode *fromNode, GraphNode *toNode);
 
+    GraphNode *lookupNode(const std::string& nodeID);
+
     // order of graph => # of nodes/vertices in this Graph
     // (size of vertex set)
     unsigned int order() const
@@ -33,7 +34,4 @@ public:
     {
         return edges.size();
     }
-
-    void debugPrint(GraphNode *fromNode);
-
 };

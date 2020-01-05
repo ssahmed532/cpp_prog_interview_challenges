@@ -49,33 +49,12 @@ void SimpleGraph::addEdge(GraphNode *fromNode, GraphNode *toNode)
 }
 
 
-void SimpleGraph::debugPrint(GraphNode *fromNode)
+GraphNode *SimpleGraph::lookupNode(const std::string& nodeID)
 {
-    queue<GraphNode *> nodesToVisit;
+    auto iter = nodes.find(nodeID);
 
-    nodesToVisit.emplace(fromNode);
-
-    vector<string> nodesVisited;
-
-    while (!nodesToVisit.empty())
-    {
-        auto node = nodesToVisit.front();
-
-        if (std::find(nodesVisited.begin(), nodesVisited.end(), node->id) != nodesVisited.end())
-        {
-            nodesToVisit.pop();
-            continue;
-        }
-
-        std::cout << "Node id:" << node->id << ", value:" << node->value << ", neighbors count:" << node->neighbors.size() << '\n';
-
-        nodesVisited.emplace_back(node->id);
-
-        for (const auto &n: node->neighbors)
-        {
-            nodesToVisit.emplace(n.second);
-        }
-
-        nodesToVisit.pop();
-    }
+    if (iter != nodes.end())
+        return iter->second;
+    else
+        return nullptr;       
 }

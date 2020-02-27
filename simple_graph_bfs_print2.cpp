@@ -7,7 +7,7 @@ using namespace std;
 
 //
 // https://medium.com/basecs/going-broad-in-a-graph-bfs-traversal-959bd1a09255
-// 
+//
 
 
 // Print out the Graph using BFS algorithm starting from the specified Node
@@ -32,7 +32,12 @@ void printGraph_BFS(GraphNode *fromNode)
             continue;
         }
 
-        std::cout << "Node id:" << node->id << ", value:" << node->value << ", neighbors count:" << node->neighbors.size() << '\n';
+        std::cout << "Node id:" << node->id;
+        if (node->value > 0)
+        {
+            std::cout << ", value:" << node->value;
+        }
+        std::cout << ", neighbors count:" << node->neighbors.size() << '\n';
 
         nodesVisited.emplace_back(node->id);
 
@@ -58,20 +63,23 @@ int main(int argc, char* argv[])
 
     SimpleGraph myGraph;
 
-    GraphNode node1("Start", 100);
-    GraphNode node2("n1", 200);
-    GraphNode node3("n2", 300);
-    GraphNode node4("n3", 400);
-    GraphNode node5("n4", 500);
-    GraphNode node6("Finish", 600);
+    GraphNode nodeA("a");
+    GraphNode nodeB("b");
+    GraphNode nodeC("c");
+    GraphNode nodeD("d");
+    GraphNode nodeE("e");
+    GraphNode nodeF("f");
+    GraphNode nodeG("g");
 
-    myGraph.addEdge(&node1, &node2);
-    myGraph.addEdge(&node1, &node4);
-    myGraph.addEdge(&node2, &node3);
-    myGraph.addEdge(&node4, &node3);
-    myGraph.addEdge(&node4, &node5);
-    myGraph.addEdge(&node5, &node6);
-    myGraph.addEdge(&node2, &node6);
+    myGraph.addEdge(&nodeA, &nodeB);
+    myGraph.addEdge(&nodeA, &nodeC);
+    myGraph.addEdge(&nodeA, &nodeG);
+    myGraph.addEdge(&nodeB, &nodeD);
+    myGraph.addEdge(&nodeB, &nodeE);
+    myGraph.addEdge(&nodeC, &nodeD);
+    myGraph.addEdge(&nodeD, &nodeE);
+    myGraph.addEdge(&nodeD, &nodeF);
+    myGraph.addEdge(&nodeF, &nodeG);
 
     std::cout << "Order of graph = " << myGraph.order() << '\n';
     std::cout << "Size  of graph = " << myGraph.size()  << '\n';

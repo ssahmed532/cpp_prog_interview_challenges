@@ -6,15 +6,8 @@ Node* LinkedList::insert(int data)
 {
     Node* pNewNode = new Node(data);
 
-    //if (nullptr == m_pHead)
-    //{
-    //    m_pHead = pNewNode;
-    //}
-    //else
-    //{
-        pNewNode->m_pNext = m_pHead;
-        m_pHead = pNewNode;
-    //}
+    pNewNode->m_pNext = m_pHead;
+    m_pHead = pNewNode;
 
     ++m_nCount;
 

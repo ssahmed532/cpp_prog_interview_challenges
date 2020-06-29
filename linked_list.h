@@ -44,6 +44,11 @@ public:
 
     Node* insert(int data);
 
+    int getSize() const
+    {
+        return m_nCount;
+    }
+
     void printToStdOut();
 
 private:

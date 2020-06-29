@@ -26,3 +26,4 @@ add_executable(simple_graph_bfs_print simple_graph.cpp simple_graph_bfs_print.cp
 add_executable(simple_graph_bfs_print2 simple_graph.cpp simple_graph_bfs_print2.cpp)
 add_executable(simple_graph_dfs_print simple_graph.cpp simple_graph_dfs_print.cpp)
 add_executable(find_index_of_largest_element find_index_of_largest_element.cpp)
+add_executable(linkedlist_insert_test linkedlist_insert_test.cpp linked_list.cpp)

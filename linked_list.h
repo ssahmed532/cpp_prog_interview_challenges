@@ -42,13 +42,26 @@ public:
         m_nCount = 0;
     }
 
+    // TODO:
+    //      write a destructor
+
+    // TODO:
+    //      write a copy constructor
+
+    // Insert the given data item into the List, and return a pointer
+    // to the newly created LL Node.
     Node* insert(int data);
 
+    // Remove the specified node from the List
+    bool remove(Node* pNode);
+
+    // Get the size of the List (# of items/nodes in it)
     int getSize() const
     {
         return m_nCount;
     }
 
+    // Print the contents of the List to stdout
     void printToStdOut();
 
 private:
